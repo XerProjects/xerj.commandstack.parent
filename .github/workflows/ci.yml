@@ -23,6 +23,7 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: ${{ matrix.java }}
+        server-id: ossrh
     - name: Build with Maven
       run: mvn -V --file pom.xml --no-transfer-progress clean package
 
@@ -43,7 +44,7 @@ jobs:
         gpg-passphrase: MAVEN_GPG_PASSPHRASE # env variable for GPG private key passphrase
 
     - name: Publish to Nexus OSS
-      run: mvn deploy
+      run: mvn -V --file pom.xml clean deploy
       env:
         NEXUS_USERNAME: xerprojects
         NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
