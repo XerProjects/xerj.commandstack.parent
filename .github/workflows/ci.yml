@@ -26,6 +26,12 @@ jobs:
     - name: Build with Maven
       run: mvn -V --file pom.xml --no-transfer-progress clean package
 
+  deploy:
+
+    runs-on: ubuntu-latest
+    needs: [build]
+
+    steps:
     - name: Set up JDK ${{ matrix.java }} for deploy
       uses: actions/setup-java@v2
       with:
