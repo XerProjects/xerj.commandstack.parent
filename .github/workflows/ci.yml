@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [ 8, 11, 16 ] 
+        java: [ 11, 16 ] 
         
     steps:
     - uses: actions/checkout@v2.3.4
@@ -38,14 +38,15 @@ jobs:
         distribution: 'adopt'
         java-version: '11'
         server-id: ossrh
-        server-username: MAVEN_USERNAME # env variable for username in deploy
-        server-password: MAVEN_CENTRAL_TOKEN # env variable for token in deploy
-        gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }} # Value of the GPG private key to import
+        server-username: NEXUS_USERNAME # env variable for username in deploy
+        server-password: NEXUS_PASSWORD # env variable for token in deploy
+        gpg-private-key: MAVEN_GPG_PRIVATE_KEY # Value of the GPG private key to import
         gpg-passphrase: MAVEN_GPG_PASSPHRASE # env variable for GPG private key passphrase
 
     - name: Publish to Apache Maven Central
       run: mvn deploy
       env:
-        MAVEN_USERNAME: xerprojects
-        MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
+        NEXUS_USERNAME: xerprojects
+        NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
         MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+        MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
