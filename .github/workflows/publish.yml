@@ -1,9 +1,11 @@
 name: Dev Deploy
 
-on: 
-  push:
-    branches:
-      - main
+on:
+  workflow_run:
+    workflows: ["Maven Build"]
+    branches: [main]
+    types: 
+      - completed
 
 jobs:
   deploy:
