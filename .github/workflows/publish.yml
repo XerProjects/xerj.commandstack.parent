@@ -30,7 +30,7 @@ jobs:
         server-password: NEXUS_PASSWORD # env variable for token in deploy
         gpg-passphrase: MAVEN_GPG_PASSPHRASE # env variable for GPG private key passphrase
 
-    - name: Publish to Nexus OSS
+    - name: Publish SNAPSHOT to ossrh
       run: mvn -V --file pom.xml clean deploy
       env:
         NEXUS_USERNAME: xerprojects
