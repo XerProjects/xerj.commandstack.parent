@@ -2,17 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.xerprojects</groupId>
-  <artifactId>xerj.commandstack.parent</artifactId>
+  <artifactId>xerj.parent</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>xerj.commandstack.parent</name>
-  <description>XerJ Command Stack's Parent POM.</description>
-  <url>https://github.com/XerProjects/xerj.commandstack.parent</url>
+  <name>xerj.parent</name>
+  <description>XerJ Parent POM.</description>
+  <url>https://github.com/XerProjects/xerj.parent</url>
 
   <licenses>
     <license>
         <name>Apache License 2.0</name>
-        <url>https://github.com/XerProjects/xerj.commandstack.parent/blob/main/LICENSE</url>
+        <url>https://github.com/XerProjects/xerj.parent/blob/main/LICENSE</url>
         <distribution>repo</distribution>
     </license>
   </licenses>
@@ -205,16 +205,16 @@
     
   <issueManagement>
       <system>GitHub</system>
-      <url>https://github.com/XerProjects/xerj.commandstack.parent/issues</url>
+      <url>https://github.com/XerProjects/xerj.parent/issues</url>
   </issueManagement>
 
   <scm>
-    <url>https://github.com/XerProjects/xerj.commandstack.parent</url>
+    <url>https://github.com/XerProjects/xerj.parent</url>
     <connection>
-        scm:git:git://github.com/XerProjects/xerj.commandstack.parent.git
+        scm:git:git://github.com/XerProjects/xerj.parent.git
     </connection>
     <developerConnection>
-        scm:git:ssh://git@github.com/XerProjects/xerj.commandstack.parent.git
+        scm:git:ssh://git@github.com/XerProjects/xerj.parent.git
     </developerConnection>
   </scm>
    

@@ -1,3 +1,3 @@
-# xerj.commandstack.parent
+# xerj.parent
 
-Parent POM for xerj.commandstack projects.
+Parent POM for XerJ projects.
