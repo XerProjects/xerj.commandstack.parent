@@ -1,12 +1,17 @@
 name: Release
 
-on: 
-  release:
-    types:
-      - published
+on:
+  workflow_dispatch:
+    inputs:
+      releaseVersion:
+        description: 'Version to release'
+        required: true
+      developmentVersion:
+        description: 'Development version after release'
+        required: true
 
 jobs:
-  deploy:
+  release:
 
     runs-on: ubuntu-latest
 
@@ -31,7 +36,13 @@ jobs:
 
     - name: Publish to ossrh
       # Enable release profile
-      run: mvn -V --file pom.xml --no-transfer-progress -Prelease clean deploy
+      run: >
+        mvn -V --file pom.xml --no-transfer-progress -Prelease 
+        release:clean release:prepare release:perform 
+        -DdryRun=true 
+        -DreleaseVersion=${{ github.event.inputs.releaseVersion }} 
+        -Dtag=v${{ github.event.inputs.releaseVersion }} 
+        -DdevelopmentVersion=${{ github.event.inputs.developmentVersion }}
       env:
         NEXUS_USERNAME: xerprojects
         NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
