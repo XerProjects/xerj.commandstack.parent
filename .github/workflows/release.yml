@@ -39,7 +39,6 @@ jobs:
       run: >
         mvn -V --file pom.xml --no-transfer-progress -Prelease
         release:clean release:prepare release:perform
-        -DdryRun=true
         -DreleaseVersion=${{ github.event.inputs.releaseVersion }}
         -Dtag=v${{ github.event.inputs.releaseVersion }}
         -DdevelopmentVersion=${{ github.event.inputs.developmentVersion }}-SNAPSHOT
