@@ -11,7 +11,7 @@
 
   <licenses>
     <license>
-        <name>Apache License 2.0</name>
+        <name>MIT License</name>
         <url>https://github.com/XerProjects/xerj.parent/blob/main/LICENSE</url>
         <distribution>repo</distribution>
     </license>
@@ -20,8 +20,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>11</java.version>
-    <maven.compiler.source>${java.version}</maven.compiler.source>
-    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.release>${java.version}</maven.compiler.release>
     <junit.version>5.8.0-M1</junit.version>
     <mockito.version>3.10.0</mockito.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
