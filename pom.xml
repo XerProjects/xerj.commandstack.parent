@@ -31,7 +31,6 @@
     <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
     <maven-release-plugin.version>3.0.0-M4</maven-release-plugin.version>
-    <slf4j-api.version>1.7.30</slf4j-api.version>
   </properties>
 
   <dependencyManagement>
@@ -59,11 +58,6 @@
         <artifactId>mockito-junit-jupiter</artifactId>
         <version>${mockito.version}</version>
         <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${slf4j-api.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -224,28 +218,28 @@
   </distributionManagement>
 
   <organization>
-      <name>XerProjects</name>
-      <url>https://github.com/XerProjects</url>
+    <name>Xer Projects</name>
+    <url>https://github.com/XerProjects</url>
   </organization>
     
   <issueManagement>
-      <system>GitHub</system>
-      <url>https://github.com/XerProjects/xerj.parent/issues</url>
+    <system>GitHub</system>
+    <url>https://github.com/XerProjects/xerj.parent/issues</url>
   </issueManagement>
 
   <scm>
     <url>https://github.com/XerProjects/xerj.parent</url>
     <connection>
-        scm:git:git://github.com/XerProjects/xerj.parent.git
+      scm:git:git://github.com/XerProjects/xerj.parent.git
     </connection>
     <developerConnection>
-        scm:git:ssh://git@github.com/XerProjects/xerj.parent.git
+      scm:git:ssh://git@github.com/XerProjects/xerj.parent.git
     </developerConnection>
   </scm>
    
   <developers>
     <developer>
-        <name>Joel Jeremy Marquez</name>
+      <name>Joel Jeremy Marquez</name>
     </developer>
   </developers>
 </project>
