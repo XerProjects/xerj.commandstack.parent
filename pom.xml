@@ -113,15 +113,16 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven-surefire-plugin.version}</version>
           <configuration>
-            <argLine>
-              ${argLine}
-            </argLine>
+            <argLine>${surefire.jacoco.args}</argLine>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
           <version>${maven-failsafe-plugin.version}</version>
+          <configuration>
+            <argLine>${failsafe.jacoco.args}</argLine>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.jacoco</groupId>
@@ -129,13 +130,26 @@
           <version>${jacoco-maven-plugin.version}</version>
           <executions>
             <execution>
-              <id>prepare-agent</id>
+              <id>jacoco-pre-unit-test-execution</id>
               <goals>
                 <goal>prepare-agent</goal>
               </goals>
+              <configuration>
+                <propertyName>surefire.jacoco.args</propertyName>
+              </configuration>
             </execution>
             <execution>
-              <id>report</id>
+              <id>jacoco-pre-integration-test-execution</id>
+              <phase>pre-integration-test</phase>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+              <configuration>
+                <propertyName>failsafe.jacoco.args</propertyName>
+              </configuration>
+            </execution>
+            <execution>
+              <id>jacoco-report</id>
               <phase>prepare-package</phase>
               <goals>
                 <goal>report</goal>
