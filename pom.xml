@@ -154,9 +154,8 @@
             </execution>
             <execution>
               <id>jacoco-pre-integration-test-execution</id>
-              <phase>pre-integration-test</phase>
               <goals>
-                <goal>prepare-agent</goal>
+                <goal>prepare-agent-integration</goal>
               </goals>
               <configuration>
                 <propertyName>failsafe.jacoco.args</propertyName>
