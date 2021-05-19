@@ -11,9 +11,9 @@
 
   <licenses>
     <license>
-        <name>MIT License</name>
-        <url>https://github.com/XerProjects/xerj.parent/blob/main/LICENSE</url>
-        <distribution>repo</distribution>
+      <name>MIT License</name>
+      <url>https://github.com/XerProjects/xerj.parent/blob/main/LICENSE</url>
+      <distribution>repo</distribution>
     </license>
   </licenses>
 
