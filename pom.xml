@@ -25,6 +25,7 @@
     <mockito.version>3.10.0</mockito.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+    <maven-failsafe-plugin.version>3.0.0-M5</maven-failsafe-plugin.version>
     <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
     <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
@@ -118,6 +119,11 @@
           </configuration>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${maven-failsafe-plugin.version}</version>
+        </plugin>
+        <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
           <version>${jacoco-maven-plugin.version}</version>
@@ -193,17 +199,6 @@
         </plugin>
       </plugins>
     </pluginManagement>
-
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-      </plugin>
-    </plugins>
   </build>
 
   <distributionManagement>
