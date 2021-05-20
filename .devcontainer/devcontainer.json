@@ -14,6 +14,10 @@
 			"INSTALL_NODE": "false"
 		}
 	},
+	
+	"mounts": [
+		"source=${localEnv:HOME}/.m2/repository,target=/home/vscode/.m2/repository,type=bind,consistency=cached"
+	],
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
